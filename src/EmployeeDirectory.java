@@ -7,10 +7,18 @@ public class EmployeeDirectory {
     private List<Employee> employeeList = new ArrayList<>();
     private HashMap<Integer, Employee> employeeHashMap = new HashMap<>();
 
+    /**
+     * Метод добавляет сотрудника в List
+     * @param e
+     */
     public void addEmployee(Employee e) {
         this.employeeList.add(e);
     }
 
+    /**
+     * Метод добавляет сотрудника в HashMap
+     * @param employee
+     */
     public void addEmployeeToHashMap(Employee employee) {
         this.employeeHashMap.put(employee.setID(), employee);
     }
@@ -61,6 +69,10 @@ public class EmployeeDirectory {
         if (!check) System.out.printf("Сотрудников с именем %s не найдено", name);
     }
 
+    /**
+     * Метод ищет и выводит сотрудника по ID в List
+     * @param id искомый ID
+     */
     public void getEmployeeByIdFromList(int id) {
         List<Employee> returnList = this.employeeList.stream()
                 .filter(employee -> employee.getId() == id).toList();
@@ -69,6 +81,10 @@ public class EmployeeDirectory {
         }
     }
 
+    /**
+     * Метод ищет и выводит сотрудника по ID в HashMap
+     * @param id искомый ID
+     */
     public void getEmployeeByIdFromHashMap(int id) {
         System.out.println((this.employeeHashMap.get(id) != null)
                 ? this.employeeHashMap.get(id)

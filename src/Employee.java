@@ -9,12 +9,19 @@ public class Employee {
     private long phoneNumber;
     private final LocalDate dateOfEmployment;
 
+    /**
+     * Конструктор для работы с List
+     */
     public Employee(long phone, String name, LocalDate date) {
         this.id = ID++;
         this.phoneNumber = phone;
         this.name = name;
         this.dateOfEmployment = date;
     }
+
+    /**
+     * Конструктор для работы с HashMap
+     */
     public Employee(String name, long phone, LocalDate date){
         this.phoneNumber = phone;
         this.name = name;
